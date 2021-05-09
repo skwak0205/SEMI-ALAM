@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.container {
+	padding: 100px 40px;
+}
+
+.small-box {
+	padding: 50px 190px;
+	text-align: center;
+}
+
+div.jb-wrap {
+	padding: 0 10px;
+	text-align: center;
+	display: inline-block;
+}
+
+img {
+	width: 200px;
+	height: 184px;
+	/*margin-top: 25px; /* 높이 150, 그림 크기 100, 남은 공백 50 => 50 / 2 = 25 */
+}
+
+p {
+	padding: 13.5px;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+

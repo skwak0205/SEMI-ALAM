@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.classApply.mapper">
+
+	<resultMap type="classApplyDto" id="classApplyMap">
+		<result property="class_apply_no" column="CLASS_APPLY_NO" />
+		<result property="class_apply_category" column="CLASS_APPLY_CATEGORY" />
+		<result property="class_apply_id" column="CLASS_APPLY_ID" />
+		<result property="class_apply_title" column="CLASS_APPLY_TITLE" />
+		<result property="class_apply_content" column="CLASS_APPLY_CONTENT" />
+		<result property="class_apply_how" column="CLASS_APPLY_HOW" />
+		<result property="class_apply_loc" column="CLASS_APPLY_LOC" />
+		<result property="class_apply_date" column="CLASS_APPLY_DATE" />
+	</resultMap>
+ 
+	<select id="selectList" resultMap="classApplyMap">
+		SELECT CLASS_APPLY_NO, CLASS_APPLY_CATEGORY, CLASS_APPLY_ID, CLASS_APPLY_TITLE, CLASS_APPLY_CONTENT, CLASS_APPLY_HOW, CLASS_APPLY_LOC, CLASS_APPLY_DATE
+		FROM CLASS_APPLY
+		WHERE CLASS_APPLY_CATEGORY = #{class_apply_category}
+		ORDER BY CLASS_APPLY_DATE DESC
+	</select>
+
+	<select id="selectOne" resultType="classApplyDto">
+		SELECT CLASS_APPLY_NO, CLASS_APPLY_CATEGORY, CLASS_APPLY_ID, CLASS_APPLY_TITLE, CLASS_APPLY_CONTENT, CLASS_APPLY_HOW, CLASS_APPLY_LOC, CLASS_APPLY_DATE
+		FROM CLASS_APPLY
+		WHERE CLASS_APPLY_NO = #{class_apply_no}
+	</select>
+	
+	<insert id="classInsert" parameterType="classApplyDto">
+		INSERT INTO CLASS_APPLY
+  		VALUES (CLASSAPPLYNOSEQ.NEXTVAL, #{class_apply_category}, #{class_apply_id}, #{class_apply_title}, #{class_apply_content}, #{class_apply_how}, #{class_apply_loc}, SYSDATE)
+	</insert>
+
+	<update id="classUpdate" parameterType="classApplyDto">
+		UPDATE CLASS_APPLY
+		SET CLASS_APPLY_TITLE = #{class_apply_title}, CLASS_APPLY_CONTENT = #{class_apply_content}
+		WHERE CLASS_APPLY_NO = #{class_apply_no}
+	</update>
+
+	<delete id="classDelete" parameterType="int">
+		DELETE FROM CLASS_APPLY
+		WHERE CLASS_APPLY_NO = #{class_apply_no}
+	</delete>
+	
+</mapper>

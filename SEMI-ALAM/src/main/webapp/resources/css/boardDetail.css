@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+.container{
+	padding: 100px 40px;
+}
+
+table {
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
+	border-top-width: thick;
+	border-bottom: none;
+	border-left-width: medium;
+	border-right: none;
+	border-spacing: 10px;
+	box-shadow: 7px 7px 7px 7px gray;
+}
+
+th {
+	width: 100px;
+	height: 40px;
+	border-top: none;
+	border-bottom: medium;
+	border-left: none;
+	border-right: none;
+	text-align: center;
+}
+
+th.file {
+	vertical-align : top;
+	text-align: center;
+}
+
+td {
+	width: 600px;
+	height: 70px;
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+
+td.writer, .view, .title, .content, .file {
+	text-align: left;
+}
+
+img {
+	width: 530px;
+	height: 250px;
+}
+
+input[type="text"] {
+	width: 520px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+input[type="button"] {
+	width: 70px;
+	height: 30px;
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}
+
+input[type="submit"] {
+	width: 70px;
+	height: 30px;
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}
+
+form {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.replyList > li {
+	text-align: center;
+	list-style:none;
+}
+
+button[type="submit"] { /* 답변 달기 버튼 */
+	width: 70px;
+	height: 30px;
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}

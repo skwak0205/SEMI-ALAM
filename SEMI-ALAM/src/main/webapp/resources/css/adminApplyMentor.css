@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.apply-lists {
+	padding: 0 17.5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.empty {
+	margin-top: 10px;
+}
+
+.apply {
+	width: 100%;
+	height: 30%;
+    border: 5px solid lightgray;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+p {
+    margin: 10px;
+}
+
+button {
+    float: right;
+    width: 20%;
+    height: 10%;
+    background: none;
+    border: 3px solid  #2C952C;
+    border-radius: 5px;
+    padding: 3px 0;
+}
+
+button:hover {
+	float: right;
+    width: 20%;
+    height: 10%;
+    color: white;
+    font-weight: 700;
+    background: cadetblue;
+    border: 3px solid cadetblue;
+    border-radius: 5px;
+    padding: 3px 0;
+}

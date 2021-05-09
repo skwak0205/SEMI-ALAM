@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+header {
+    /* height: 70px; */
+    /* padding: 1rem; */
+    padding: 20px 15px;
+    color: #282828;
+    background: #EBD3B0;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    width: -webkit-fill-available;
+    z-index: 100;
+}
+
+#logo {
+	cursor: pointer;
+    margin-left: 2%;
+}
+
+/* 상단 메뉴 총괄 */
+ul.menu>li {
+	font-size: 17px;
+	height: 25px;
+	width: 90px;
+	padding: 5px 10px;
+	color: #3c3c3c; /* 글자색 */
+	text-align: center;
+	display: inline-block;
+	position: relative;
+}
+
+/* 상단 메뉴 마우스, 하단 메뉴 보임 */
+ul.menu>li:hover ul.submenu {
+	display: block;
+}
+
+/* 하단 메뉴 위치 */
+ul.menu>li ul.submenu {
+	top: 36.5px;
+	left: 0;
+	display: none;
+	position: absolute;
+}
+
+/* 하단 메뉴 총괄 */
+ul.menu>li ul.submenu>li {
+	width: 95px;
+	padding: 5px 10px;
+	margin-bottom: 3px;
+	color: #3c3c3c; /* 글자색 */
+	text-align: center;
+	display: inline-block;
+	box-shadow: 0px 5px 5px gray;
+	background: rgba(102, 51, 0, 0.7);
+	border-radius: 10px;
+}
+
+/* 하단 메뉴 클릭 시, 배경색 */
+ul.menu>li ul.submenu>li:hover {
+	background: linear-gradient( to top, #e2d1c3, #fdfcfb ); /* 배경색 */
+}
+
+.chat-icon {
+	cursor: pointer;
+}
+
+/* 클릭하지 않은 링크 */
+a:link {
+	color: #000000; /* 글자색 */
+	text-decoration: none;
+}
+
+/* 클릭한 링크 */
+a:visited {
+	color: #000000; /* 글자색 */
+	text-decoration: none;
+}

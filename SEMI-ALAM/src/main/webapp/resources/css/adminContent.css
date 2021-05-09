@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.container {
+	padding: 100px 40px;
+	display: flex;
+}
+
+.content {
+	flex: 1;
+	padding: 30px 0 150px 30px;
+}

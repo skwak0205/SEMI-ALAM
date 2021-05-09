@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+table, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table {
+	padding: 30px 40px;
+	width: 100%;
+	height: 80%;
+	display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	overflow-x: auto;
+	overflow-y: hidden;
+	text-align: center;
+	border: none;
+}
+
+tbody {
+	display: flex
+}
+
+th, td {
+	text-align: center;
+	border-radius: 3px;
+	display: block
+}
+
+th {
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	padding-top: 15px;
+	width: 127px;
+	height: 35px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+td {
+	text-align: left;
+	margin-bottom: 10px;
+	padding-right: 100px;
+	width: 590px;
+	height: 35px;
+	padding-top: 15px;
+	padding-left: 30px;
+	vertical-align: middle;
+}
+
+input[type="button"] {
+	font-weight: 700;
+	width: 100px;
+	height: 40px;
+	background-color: #e2e2e2;
+	border-radius: 5px;
+	float: right;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+input[type="submit"] {
+	font-weight: 700;
+	width: 100px;
+	height: 40px;
+	background-color: #e2e2e2;
+	border-radius: 5px;
+	float: right;
+	margin-right: 10px;
+}
+
+input[type="checkbox"] {
+	margin-right: 5px;
+}
+
+input[type="radio"] {
+	margin-right: 5px;
+}
+
+input {
+	border: none;
+	outline: none;
+	height: auto;
+}

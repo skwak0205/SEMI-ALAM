@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="applyMentor.mapper">
+	<insert id="insert" parameterType="applyMentorDto">
+		INSERT INTO APPLY_MENTOR
+		VALUES (APPLY_NO.NEXTVAL, #{apply_category}, #{apply_id}, #{apply_price}, #{apply_content}, #{apply_how}, SYSDATE)
+	</insert>
+	
+	<select id="selectList" resultType="applyMentorDto">
+		SELECT APPLY_NO, APPLY_CATEGORY, APPLY_ID, APPLY_PRICE, APPLY_CONTENT, APPLY_HOW, APPLY_DATE
+		FROM APPLY_MENTOR
+		ORDER BY APPLY_DATE DESC
+	</select>
+	
+	<delete id="deleteApproved">
+		DELETE FROM APPLY_MENTOR
+		WHERE APPLY_ID = #{apply_id}
+	</delete>
+	
+</mapper>

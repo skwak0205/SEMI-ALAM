@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<properties resource="com/alam/db/db.properties"></properties>
+  
+  <typeAliases>
+  	<typeAlias type="com.alam.dto.LoginDto" alias="LoginDto"/>
+  	
+  	<typeAlias type="com.alam.dto.VideoDto" alias="VideoDto" />
+  	
+  	<typeAlias type="com.alam.dto.ChatDto" alias="chatDto" />
+		
+	<typeAlias type="com.alam.dto.ChatMessageDto" alias="messageDto" />
+	
+	<typeAlias type="com.alam.dto.BoardDto" alias="boardDto" />
+	
+	<typeAlias type="com.alam.dto.ReplyDto" alias="replyDto" />
+	
+	<typeAlias type="com.alam.dto.SearchDto" alias="searchDto" />
+	
+	<typeAlias type="com.alam.dto.ClassApplyDto" alias="classApplyDto" />
+	
+	<typeAlias type="com.alam.dto.ApplyMentorDto" alias="applyMentorDto"/>
+	
+	<typeAlias type="com.alam.dto.CalendarDto" alias="calendarDto"/>
+	
+	<typeAlias type="com.alam.dto.UploadDto" alias="uploadDto"/>
+	
+	<typeAlias type="com.alam.dto.PaymentDto" alias="paymentDto"/>
+	
+  </typeAliases>
+  
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+  	<mapper resource="com/alam/db/login-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/videoChat-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/chat-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/board-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/admin-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/classApply-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/applyMentor-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/calendar-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/upload-mapper.xml"/>
+  	
+  	<mapper resource="com/alam/db/payment-mapper.xml"/>
+  </mappers>
+
+</configuration>  

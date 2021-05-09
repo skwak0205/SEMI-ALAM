@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="upload.mapper">
+
+	<insert id="upload" parameterType="uploadDto">
+		INSERT INTO UPLOAD
+		VALUES(UPLOAD_NO.NEXTVAL, #{upload_id}, #{upload_title}, #{upload_category}, #{upload_price}, #{upload_content}, #{upload_file_name}, #{upload_file_loc}, SYSDATE)
+	
+	</insert>
+	
+	<select id="uploadList" resultType="uploadDto">
+		SELECT UPLOAD_NO, UPLOAD_ID, UPLOAD_TITLE, UPLOAD_CATEGORY, UPLOAD_PRICE, UPLOAD_CONTENT, UPLOAD_FILE_NAME, UPLOAD_FILE_LOC, UPLOAD_DATE
+		FROM UPLOAD
+		WHERE UPLOAD_CATEGORY = #{upload_category}
+		ORDER BY UPLOAD_DATE DESC
+	</select>
+	
+	<delete id="delete" parameterType="uploadDto">
+		DELETE FROM UPLOAD
+		WHERE UPLOAD_NO = #{upload_no} AND UPLOAD_ID = #{upload_id} 
+	</delete>
+	
+</mapper>

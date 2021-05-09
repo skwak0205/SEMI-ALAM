@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* 마이페이지 - 멘토 신청 */
+form {
+	margin-left: -40px;
+	padding: 50px 190px;
+	background: url(https://data.ac-illust.com/data/thumbnails/0f/0fce9674bf70d5634853811af3bece8d_t.jpeg) no-repeat;
+	background-position: center left;
+	background-size: 800px 650px;
+}
+
+label {
+	font-size: 20px;
+}
+
+div.one {
+	margin-bottom: 2px;
+}
+
+div.two {
+	text-align: left;
+}
+
+select#category {
+	height: 20px;
+	width: 20%;
+}
+
+input {
+    padding-left: 5px;
+}
+
+input#member_id {
+	height: 20px;
+	width: 20%;
+	background-color: #dcdcdc;
+}
+
+input#price {
+	height: 20px;
+	width: 35%;
+}
+
+textarea {
+	width: 50%;
+	padding-left: 5px;
+}
+
+input[type="submit"] {
+	margin-left: 330px;
+	height: 30px;
+	width: 70px;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}
+
+input[type="button"] {
+	height: 30px;
+	width: 70px;	
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}

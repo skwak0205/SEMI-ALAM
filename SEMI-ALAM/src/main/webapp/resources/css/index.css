@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+main.container{
+	min-height: 100%;
+	margin-top: 5%;
+}
+
+
+/* 검색란 */
+div.search {
+	height: 50px;
+	width: 450px;
+	border: 1px solid gray; /* 테두리색 */
+	background: white; /* 배경색 */
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+input {
+	height: 30px;
+	width: 380px;
+	padding: 10px;
+	float: left;
+	font-size: 20px;
+	border: 0px;
+	outline: none;
+}
+
+
+/* 돋보기 */
+button { /* 클릭 이벤트가 안됨 */
+	height: 100%;
+	width: 50px;
+	float: right;
+	border: 0px; /* 테두리색 */
+	background: white;
+	outline: none;
+}
+
+/* 카테고리 */
+div.category {
+	text-align: center;
+}
+
+ul.category a:link {
+	color: black; /* 글자색 */
+	text-decoration: none;
+}
+
+ul.category img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 75px;
+	width: 75px;
+	text-align: center;
+}
+
+.it {
+	width: 10%;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.subject {
+	width: 10%;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.beauty {
+	width: 10%;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.language {
+	width: 10%;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.cook {
+	width: 10%;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.license {
+	width: 10%;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+.etc {
+	width: 10%;
+	box-sizing: border-box;
+	display: inline-block;
+}
+
+/* rank */
+div.rank {
+	text-align: center;
+	padding: 20px;
+  	padding-bottom: 100px;
+}
+
+

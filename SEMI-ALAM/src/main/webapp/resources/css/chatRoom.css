@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+.background {
+	background:
+		url(https://www.pngkey.com/png/full/859-8598072_picture-freeuse-library-silhouette-mobile-at-getdrawings-cell.png)
+		no-repeat 50%;
+	background-size: contain;
+	height: 400px;
+	width: 250px;
+	padding: 74px;
+}
+
+.chat-room {
+	position: relative;
+	height: 400px;
+	width: 250px;
+}
+
+.search {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 5px;
+	background-color: #059ee0;
+	height: 100px;
+	width: 92.5%;
+	overflow: scroll;
+	
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.search::-webkit-scrollbar {
+	display: none;
+}
+
+.search-bar {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	padding-top: 15px;
+	padding-left: 8px;
+}
+
+.search-Icon {
+	color: white;
+	font-size: 13px !important;
+}
+
+.search-bar>input {
+	outline: none;
+	background-color: transparent;
+	border: none;
+	font-size: 12px;
+	flex: 1 1;
+	color: #fff;
+	margin-left: 3px;
+}
+
+.search-bar>input::placeholder {
+	color: white;
+	opacity: 1;
+}
+
+#search-btn {
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    background-color: #059ee0;
+    color: white;
+    cursor: pointer;
+    align-items: center;
+}
+
+.search-list {
+	padding: 0;
+	margin: 0 5px;
+}
+
+.list {
+	list-style: none;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.li > span {
+    font-size: 11px;
+}
+
+.container {
+	box-shadow: 1px -7px 7px -6px rgba(0, 0, 0, 0.44);
+	/* height: 359px; */
+	background-color: #fff;
+	margin-top: -13px;
+	margin-left: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	overflow: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+	display: none;
+}
+
+.chatList {
+	position: relative;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.chats {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px;
+	border-bottom: 1px solid #f5f5f5;
+	cursor: pointer;
+}
+
+.empty {
+	margin-left: 10px;
+}
+
+.avatar img {
+	border-radius: 50%;
+	object-fit: cover;
+	width: 50px;
+	height: 50px;
+}
+
+.userInfo {
+	padding-left: 5px;
+	flex: 1 1;
+}
+
+#username {
+	font-size: 12px;
+}
+
+#timestamp {
+	font-size: 10px;
+	color: gray;
+}
+
+#message {
+    margin: 5px 0px;
+    font-size: 12px;
+}
+
+.deleteChatRoom {
+	position: absolute;
+    right: 5%;
+    bottom: 40%;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.deleteChatRoom:hover {
+	color: red;
+    font-size: 15px;
+    transform: scale(1.5);
+}

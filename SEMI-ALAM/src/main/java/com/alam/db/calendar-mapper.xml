@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="calendar.mapper">
+	<insert id="insertCalendar" parameterType="calendarDto">
+		INSERT INTO CALENDAR
+		VALUES(CALENDAR_NO.NEXTVAL, #{calendar_id}, #{calendar_title}, #{calendar_start}, #{calendar_end}, #{calendar_allday})
+	</insert>
+	
+	<delete id="deleteCalendar" parameterType="calendarDto">
+		DELETE FROM CALENDAR
+		WHERE CALENDAR_ID = #{calendar_id} AND CALENDAR_TITLE = #{calendar_title}
+		AND CALENDAR_START = #{calendar_start} AND CALENDAR_END = #{calendar_end}
+	
+	</delete>
+	
+	<select id="calendarList" parameterType="calendarDto" resultType="calendarDto">
+		SELECT CALENDAR_NO, CALENDAR_ID, CALENDAR_TITLE, CALENDAR_START, CALENDAR_END, CALENDAR_ALLDAY
+		FROM CALENDAR
+		WHERE CALENDAR_ID = #{calendar_id}
+		AND CALENDAR_START between #{calendar_start} and #{calendar_end}
+	</select>
+	
+	<update id="updateCalendar" parameterType="calendarDto">
+		UPDATE CALENDAR
+		SET CALENDAR_START = #{calendar_start}, CALENDAR_END = #{calendar_end}
+		WHERE CALENDAR_ID = #{calendar_id} AND CALENDAR_TITLE = #{calendar_title}
+	</update>
+</mapper>

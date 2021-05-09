@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+footer {
+		/*position:absolute;*/
+		height: 190px;
+		width: 100%;
+		background-color: #c8c8c8;
+		border-top: none;
+		border-bottom: none;
+		border-left: none;
+		border-right: none;
+}
+
+#footerLeft {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#footerList {
+    margin-top: 20px;
+}
+
+ul {
+    list-style: none;
+}

@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+.my-hr3 {
+	margin-left: 10px;
+	border: 0;
+	height: 3px;
+	background: #ccc;
+}
+
+fieldset {
+	width: 75%;
+	height: 75px;
+	margin: auto;
+	text-align: center;
+}
+
+/*검색 필드*/
+select {
+	width: 170px;
+	height: 27px;
+	margin-top: 11px;
+	margin-left: 5px;
+	margin-right: 25px;
+	background-color: #e2e2e2;
+	border-radius: 5px;
+}
+
+input[type="text"] {
+	width: 300px;
+	height: 23px;
+	margin-left: 5px;
+	border: 1px solid gray;
+	background-color: #e2e2e2;
+	border-radius: 5px;
+}
+
+input[type="submit"] {
+	width: 70px;
+	height: 27.5px;
+	margin-left: 15px;
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}
+
+/* 모든 테이블 */
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th {
+	padding: 20px;
+	background: #F0AA5F;
+	border: none;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+}
+
+td {
+	padding: 10px;
+	border-collapse: collapse;
+}
+
+/*검색 결과*/
+.table_search {
+	margin: 20px 10px;
+	text-align: center;
+	border: none;
+	border-left: white;
+	border-right: white;
+}
+
+.table_search td {
+	border-bottom: white;
+	height: 70px;
+}
+
+input[type="button"] {
+	width: 50px;
+	height: 30px;
+	background-color: #c8c8c8;
+	border-radius: 5px;
+}
+
+/* 회원 전체 목록 */
+.table_all {
+	margin: 20px 10px;
+	text-align: center;
+	border: none;
+	border-left: white;
+	border-right: white;
+	border-collapse: collapse;
+}
+
+.table_all td {
+	border-bottom: white;
+	height: 70px;
+}
+
+/* 문의사항 */
+.table_moon caption {
+	height: 50px;
+	color: #ffffff;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	line-height: 52px;
+	border-bottom: 5px solid #FFF;
+	-webkit-border-radius: 8px 8px 0 0;
+	-moz-border-radius: 8px 8px 0 0;
+	border-radius: 8px 8px 0 0;
+	background: #2C952C;
+}
+
+
+table.table_moon {
+	margin: 20px 10px;
+	text-align: center;
+	border: none;
+	border-left: white;
+	border-right: white;
+	border-collapse: collapse;
+}
+
+.table_moon td {
+	height: 30px;
+}
+
+/* 신고사항 */
+.table_shin caption {
+	height: 50px;
+	color: #ffffff;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	line-height: 52px;
+	border-bottom: 5px solid #FFF;
+	-webkit-border-radius: 8px 8px 0 0;
+	-moz-border-radius: 8px 8px 0 0;
+	border-radius: 8px 8px 0 0;
+	background: #CD1F48;
+}
+
+.table_shin {
+	margin: 20px 10px;
+	text-align: center;
+	border: none;
+	border-left: white;
+	border-right: white;
+	border-collapse: collapse;
+}
+
+.table_shin td {
+	height: 30px;
+}

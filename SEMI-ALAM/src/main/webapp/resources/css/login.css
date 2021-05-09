@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.login-box {
+	position: absolute;
+	padding: 40px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, +15%);
+	background: rgba(102, 51, 0, 0.5);
+	box-shadow: 0 15px 25px rgba(51, 0, 0, 0.75);
+	border-radius: 10px;
+}
+
+.login-box h1 {
+	margin: 0 0 30px;
+	padding: 0;
+	color: #282828;
+	text-align: center;
+}
+
+.login-box .user-box {
+	position: relative;
+}
+
+.login-box .user-box input {
+	width: 100%;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #ffffff;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+
+.login-box .user-box label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #ffffff;
+	pointer-events: none;
+	transition: 0.5s;
+}
+
+.login-box .user-box input:focus ~ label, .login-box .user-box input:valid 
+	 ~ label {
+	top: -20px;
+	left: 0;
+	color: rgb(50,71,119);
+	font-size: 12px;
+}
+
+.register {
+	font-size: 13px;
+	font-weight: 600;
+	color: #dcdcdc;
+}
+
+.register a {
+	text-decoration: none;
+	color: #3c3c3c;
+}
+
+.findIdPw {
+	margin-top: 5px;
+}
+
+.findIdPw a {
+	font-size: 13px;
+	font-weight: 600;
+	color: #dcdcdc;
+	text-decoration: none;
+}
+
+.login-box form button {
+	position: relative;
+	padding: 10px 20px;
+	margin-top: 30px;
+	margin-left: 5px;
+	width: 150px;
+	height: 40px;
+	font-size: 16px;
+	letter-spacing: 3px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 0.5s;
+	overflow: hidden;
+	color: #dcdcdc;
+	background-color: #3c3c3c;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.cancel {
+	position: relative;
+	padding: 10px 20px;
+	margin-left: 7.5px;
+	margin-top: 30px;
+	width: 150px;
+	height: 40px;
+	font-size: 16px;
+	letter-spacing: 3px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: 0.5s;
+	overflow: hidden;
+	color: #dcdcdc;
+	background-color: #3c3c3c;
+	border-radius: 10px;
+	display: inline-block;
+	
+}
+
+.cancel:hover {
+	background-color: #aa8c64;
+}
+
+.login-box button:hover {
+  background: #82B3ED;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+
+.login-box button span {
+  position: absolute;
+  display: block;
+}
+
+.naver-btn {
+	margin-top: 10px;
+}
+
+.login-box button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #aa8c64);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login-box button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #aa8c64);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login-box button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #aa8c64);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login-box button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #aa8c64);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}

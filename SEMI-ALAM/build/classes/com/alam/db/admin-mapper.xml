@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.admin.mapper">
+
+	<select id="searchList" parameterType="String" resultType="boardDto">
+		SELECT BOARD_NO, BOARD_CATEGORY, BOARD_MAIN_ID, BOARD_MAIN_TITLE, BOARD_MAIN_CONTENT, BOARD_MAIN_DATE, BOARD_MAIN_VIEWS, BOARD_MAIN_SECRET
+		FROM BOARD
+		<if test="QUERY != null">
+		WHERE BOARD_MAIN_ID LIKE '%' || #{QUERY} || '%'
+		</if>
+	</select>
+	
+	<select id="searchId" parameterType="String" resultType="loginDto">
+		SELECT MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_CATEGORY, MEMBER_GENDER, MEMBER_GRADE
+		FROM MEMBER 
+		<if test="QUERY != null">
+		WHERE MEMBER_ID LIKE '%' || #{QUERY} || '%'
+		</if>
+	</select>
+	
+	<select id="memberListAll" resultType="loginDto">
+		SELECT MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_CATEGORY, MEMBER_GENDER, MEMBER_GRADE
+		FROM MEMBER 
+	</select>
+	
+	<select id="adminDelMember" resultType="loginDto">
+		DELETE FROM MEMBER
+		WHERE MEMBER_ID = #{MEMBER_ID}
+	</select>
+	
+	<select id="adminComplaint" resultType="boardDto">
+		SELECT BOARD_NO, BOARD_CATEGORY, BOARD_MAIN_ID, BOARD_MAIN_TITLE, BOARD_MAIN_CONTENT, BOARD_MAIN_DATE, BOARD_MAIN_VIEWS, BOARD_MAIN_SECRET
+		FROM BOARD
+		WHERE BOARD_CATEGORY = '신고'
+	</select>
+	<select id="adminAsk" resultType="boardDto">
+		SELECT BOARD_NO, BOARD_CATEGORY, BOARD_MAIN_ID, BOARD_MAIN_TITLE, BOARD_MAIN_CONTENT, BOARD_MAIN_DATE, BOARD_MAIN_VIEWS, BOARD_MAIN_SECRET
+		FROM BOARD
+		WHERE BOARD_CATEGORY = '문의'
+	</select>
+	
+</mapper>

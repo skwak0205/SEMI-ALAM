@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/* 마이페이지 전체 */
+.container {
+	padding: 60px 40px;
+	display: flex;
+}
+
+.content {
+	flex: 1;
+	padding: 60px 50px 150px 30px;
+}

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+.container {
+	padding: 100px 40px;
+}
+
+form {
+	padding: 0 190px;
+	background: url(https://data.ac-illust.com/data/thumbnails/0f/0fce9674bf70d5634853811af3bece8d_t.jpeg) no-repeat;
+	background-position: center center;
+	background-size: 60% 100%;	 
+}
+
+label {
+	font-size: 20px;
+}
+
+div.one {
+	margin-left: 25%;
+	margin-bottom: 2px;
+}
+
+div.two {
+	margin-left: 25%;
+	text-align: left;
+}
+
+select#category {
+	height: 30px;
+	width: 20%;
+	border-radius: 4px;
+}
+
+input#member_id {
+	height: 30px;
+	width: 20%;
+	background-color: #dcdcdc;
+	border-radius: 4px;
+}
+
+input#title {
+	height: 30px;
+	width: 35%;
+	border-radius: 4px;
+}
+
+textarea {
+	width: 68%;
+	border-radius: 4px;
+}
+
+input#loc {
+	height: 30px;
+	width: 35%;
+	border-radius: 4px;
+}
+
+input#price {
+	height: 30px;
+	width: 35%;
+	border-radius: 4px;
+}
+
+
+input[type="submit"] {
+	margin-left: 120px;
+	height: 30px;
+	width: 70px;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}
+
+input[type="button"] {
+	height: 30px;
+	width: 70px;	
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="board.mapper">
+
+	<select id="boardList" parameterType="boardDto"
+		resultType="boardDto">
+		SELECT *
+		FROM (
+		SELECT A.BOARD_NO,
+		A.BOARD_CATEGORY,
+		A.BOARD_MAIN_ID,
+		A.BOARD_MAIN_TITLE,
+		A.BOARD_MAIN_CONTENT,
+		A.BOARD_MAIN_DATE,
+		A.BOARD_MAIN_VIEWS,
+		A.BOARD_MAIN_FILEID,
+		A.BOARD_MAIN_FILELOC,
+		ROWNUM AS R
+		FROM (
+		SELECT *
+		FROM BOARD
+		WHERE BOARD_CATEGORY = #{board_category}
+		ORDER BY BOARD_NO DESC) A
+		)B
+		WHERE B.R BETWEEN #{startPage} AND #{endPage}
+	</select>
+
+	<insert id="boardInsert" parameterType="boardDto">
+		INSERT INTO BOARD
+		VALUES(BOARDNOSEQ.NEXTVAL, #{board_category}, #{board_main_id},
+		#{board_main_title}, #{board_main_content}, SYSDATE, 0,
+		#{board_main_secret}, #{board_main_fileid}, #{board_main_fileloc})
+	</insert>
+
+	<select id="boardDetail" resultType="boardDto">
+		SELECT BOARD_NO,
+		BOARD_CATEGORY, BOARD_MAIN_ID, BOARD_MAIN_TITLE, BOARD_MAIN_CONTENT,
+		BOARD_MAIN_DATE, BOARD_MAIN_VIEWS, BOARD_MAIN_FILEID, BOARD_MAIN_FILELOC
+		FROM BOARD
+		WHERE
+		BOARD_NO = #{board_no}
+	</select>
+
+	<insert id="reply" parameterType="replyDto">
+		INSERT INTO REPLY
+		VALUES(REPLYNOSEQ.NEXTVAL, #{board_no}, #{board_category},
+		#{reply_id}, #{reply_content}, SYSDATE)
+	</insert>
+
+	<select id="showReply" resultType="replyDto">
+		SELECT BOARD_NO, REPLY_ID,
+		REPLY_CONTENT, REPLY_DATE
+		FROM REPLY
+		ORDER BY REPLY_DATE DESC
+	</select>
+
+	<select id="readComplain" resultType="String">
+		SELECT BOARD_MAIN_SECRET
+		FROM BOARD
+		WHERE BOARD_NO = #{board_no} AND
+		BOARD_MAIN_ID = #{board_main_id}
+	</select>
+
+	<update id="boardUpdate" parameterType="boardDto">
+		UPDATE BOARD
+		SET
+		BOARD_MAIN_TITLE = #{board_main_title}, BOARD_MAIN_CONTENT =
+		#{board_main_content}, BOARD_MAIN_DATE = SYSDATE
+		WHERE BOARD_NO = #{board_no}
+	</update>
+
+	<delete id="boardDelete">
+		DELETE FROM BOARD
+		WHERE BOARD_NO = #{board_no}
+	</delete>
+	
+	<update id="viewCount" parameterType="int">
+		UPDATE BOARD
+		SET BOARD_MAIN_VIEWS = BOARD_MAIN_VIEWS + 1
+		WHERE BOARD_NO = #{board_no}
+	</update>
+	
+	<select id="boardSearch" parameterType="searchDto" resultType="boardDto">
+		SELECT BOARD_NO, 
+			   BOARD_CATEGORY, 
+		       BOARD_MAIN_ID, 
+			   BOARD_MAIN_TITLE, 
+			   BOARD_MAIN_CONTENT, 
+			   BOARD_MAIN_DATE, 
+			   BOARD_MAIN_VIEWS,
+			   BOARD_MAIN_FILEID, 
+			   BOARD_MAIN_FILELOC, 
+			   ROWNUM
+  	      FROM (
+       		    SELECT A.BOARD_NO, 
+		               A.BOARD_CATEGORY, 
+		               A.BOARD_MAIN_ID, 
+		               A.BOARD_MAIN_TITLE, 
+		               A.BOARD_MAIN_CONTENT, 
+		               A.BOARD_MAIN_DATE, 
+		               A.BOARD_MAIN_VIEWS,
+		               A.BOARD_MAIN_FILEID, 
+		               A.BOARD_MAIN_FILELOC, 
+		               ROWNUM AS R
+ 	    		 FROM (
+ 	         			SELECT * 
+ 	             		  FROM BOARD
+						 WHERE BOARD_CATEGORY = #{category}
+						 
+					<if test="searchChoice eq '작성자'">
+						   AND BOARD_MAIN_ID LIKE '%' || #{searchInput} || '%'
+					</if>
+					
+					<if test="searchChoice eq '제목'">
+						   AND BOARD_MAIN_TITLE LIKE '%' || #{searchInput} || '%'
+					</if>
+					
+					<if test="searchChoice eq '작성자+제목'">
+						   AND BOARD_MAIN_ID LIKE '%' || #{searchInput} || '%'
+						    OR BOARD_MAIN_TITLE LIKE '%' || #{searchInput} || '%'
+					</if>
+ 	            		 ORDER BY BOARD_NO DESC) A
+ 	          )B
+ 	     WHERE B.R BETWEEN #{startPage} AND #{endPage}	
+	</select>
+
+	<select id="selectpagingcount" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BOARD_CATEGORY = #{board_category}
+	</select>
+	
+	<select id="selectSearchPagingcount" parameterType="searchDto" resultType="int">
+		SELECT COUNT(*)
+		FROM BOARD
+		WHERE BOARD_CATEGORY = #{category}
+		
+		<if test="searchChoice eq '작성자'">
+		   AND BOARD_MAIN_ID LIKE '%' || #{searchInput} || '%'
+		</if>
+		
+		<if test="searchChoice eq '제목'">
+		   AND BOARD_MAIN_TITLE LIKE '%' || #{searchInput} || '%'
+		</if>
+		
+		<if test="searchChoice eq '작성자+제목'">
+		   AND BOARD_MAIN_ID LIKE '%' || #{searchInput} || '%'
+		    OR BOARD_MAIN_TITLE LIKE '%' || #{searchInput} || '%'
+		</if>
+	</select>
+
+</mapper>

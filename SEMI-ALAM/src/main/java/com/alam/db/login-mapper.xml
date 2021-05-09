@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.login.mapper">
+	<resultMap type="loginDto" id="loginMap">
+		<result property="member_id" column="MEMBER_ID" />
+		<result property="member_pw" column="MEMBER_PW" />
+		<result property="member_name" column="MEMBER_NAME" />
+		<result property="member_email" column="MEMBER_EMAIL" />
+		<result property="member_phone" column="MEMBER_PHONE" />
+		<result property="member_address" column="MEMBER_ADDRESS" />
+		<result property="member_category" column="MEMBER_CATEGORY" />
+		<result property="member_gender" column="MEMBER_GENDER" />
+		<result property="member_grade" column="MEMBER_GRADE" />
+	</resultMap>
+	
+	<select id="memberSelectList" resultMap="loginMap">
+		SELECT MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_CATEGORY, MEMBER_GENDER, MEMBER_GRADE
+		FROM MEMBER
+	</select>
+	
+	<select id="updateRole" parameterType="loginDto">
+		UPDATE MEMBER 
+		   SET MEMBER_GRADE =#{member_grade} 
+		 WHERE MEMBER_ID = #{member_id}
+	</select>
+	
+	<select id="memberLogin" parameterType="loginDto" resultType="loginDto">
+		SELECT MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_CATEGORY, MEMBER_GENDER, MEMBER_GRADE
+		FROM MEMBER 
+		WHERE MEMBER_ID = #{member_id}
+		AND MEMBER_PW = #{member_pw}
+	</select>
+	
+	<select id="memberLoginInsert" parameterType="loginDto">
+		INSERT INTO MEMBER
+		VALUES (#{member_id}, #{member_pw}, #{member_name}, #{member_email}, #{member_phone}, #{member_address}, #{member_category}, #{member_gender}, #{member_grade}, #{member_salt})
+	</select>
+	 
+	<select id="idCheck" resultType="loginDto">
+		SELECT MEMBER_ID FROM MEMBER
+		WHERE MEMBER_ID = #{member_id}
+	</select>
+	 
+	 <select id="memeberLoginSelectOne" resultType="loginDto">
+	 	SELECT MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_ADDRESS, MEMBER_CATEGORY, MEMBER_GENDER, MEMBER_GRADE
+		FROM MEMBER 
+		WHERE MEMBER_ID = #{member_id}
+	 </select>
+	 
+	 <select id="memberLoginUpdate" parameterType="loginDto">
+	 	UPDATE MEMBER
+	 	SET MEMBER_PW = #{member_pw}, MEMBER_NAME = #{member_name}, MEMBER_EMAIL = #{member_email}, MEMBER_CATEGORY = #{member_category}, MEMBER_GENDER = #{member_gender}
+	 	WHERE MEMBER_ID = #{member_id}
+	 </select>
+	 
+	 <select id="memberLoginDelete">
+	 	DELETE FROM MEMBER 
+		WHERE MEMBER_ID = #{member_id}
+	 </select>
+	 
+	 <select id="memberLoginIdYn" resultType="String">
+        SELECT NVL(MAX('Y'),'N') AS LOGIN_ID_YN
+        FROM MEMBER 
+        WHERE MEMBER_ID = #{member_id}
+     </select>
+	 
+	 <select id="memeberCategorySelect" parameterType="loginDto" resultType="loginDto">
+	 	SELECT CATEGORY_NUM, CATEGORY_TYPE, CATEGORY_NAME
+		FROM CATEGORY
+	 </select>
+	 
+	 <select id="checkUser" resultType="loginDto">
+	 	SELECT MEMBER_ID
+	 	FROM MEMBER
+	 	WHERE 
+	 	<if test="member_name != null">
+	 		MEMBER_NAME = #{member_name} AND MEMBER_PHONE = #{member_phone}
+	 	</if>
+	 	<if test="member_id != null">
+	 		MEMBER_ID = #{member_id} AND MEMBER_PHONE = #{member_phone}
+	 	</if>
+	 </select>
+	 
+	 <select id="updatePw" parameterType="loginDto">
+	 	UPDATE MEMBER
+	 	SET MEMBER_PW = #{member_pw}, MEMBER_SALT = #{member_salt}
+	 	WHERE MEMBER_ID = #{member_id}
+	 </select>
+	 
+	 <select id="getSalt" resultType="loginDto">
+	 	SELECT MEMBER_SALT
+	 	FROM MEMBER
+	 	WHERE MEMBER_ID = #{member_id}
+	 </select>
+	 
+	 <update id="approve" parameterType="String" >
+	 	UPDATE MEMBER
+	 	SET MEMBER_GRADE = 'S'
+	 	WHERE MEMBER_ID = #{member_id}
+	 </update>
+</mapper>  

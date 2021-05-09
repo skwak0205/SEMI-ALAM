@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="chat.mapper">
+
+	<insert id="createChat" parameterType="chatDto" >
+		INSERT INTO CHATROOMS
+		VALUES(CHATNOSEQ.NEXTVAL, #{room_id}, #{creator_id}, #{guest_id}, SYSDATE)
+	</insert>
+	
+	<select id="checkChatRoom" resultType="chatDto">
+		SELECT ROOM_ID, CREATOR_ID, GUEST_ID
+		FROM CHATROOMS
+		WHERE CREATOR_ID = #{creator_id} AND GUEST_ID = #{guest_id}
+		OR CREATOR_ID = #{guest_id} AND GUEST_ID = #{creator_id}
+	</select>
+	
+	<select id="showMessage" resultType="messageDto" >
+		SELECT FROM_ID, TO_ID, MESSAGE, SEND_DATE 
+		FROM CHATMESSAGES
+		WHERE ROOM_ID = #{room_id}
+		ORDER BY SEND_DATE ASC
+	</select>
+	
+	<select id="showChatRoom" resultType="chatDto" >
+		SELECT ROOM_ID, CREATOR_ID, GUEST_ID, CREATE_DATE
+		FROM CHATROOMS
+		WHERE CREATOR_ID = #{guest_id} OR GUEST_ID = #{guest_id}
+	</select>
+	
+	<insert id="saveMsg" parameterType="messageDto" >
+		INSERT INTO CHATMESSAGES
+		VALUES(CHATSEQ.NEXTVAL, #{room_id}, #{from_id}, #{to_id}, #{message}, #{send_date})
+	</insert>
+	
+	<select id="searchId" resultType="LoginDto">
+		SELECT MEMBER_ID, MEMBER_NAME, MEMBER_GRADE
+		FROM MEMBER 
+		<if test="SEARCHID != null">
+		WHERE MEMBER_ID LIKE '%' || #{SEARCHID} || '%'
+		</if>
+	</select>
+	
+	<delete id="deleteChatRoom" parameterType="String">
+		DELETE FROM CHATROOMS
+		WHERE ROOM_ID = #{room_id}
+	</delete>
+	
+	<select id="lastMsg" parameterType="String" resultType="messageDto">
+		
+		SELECT ROWNUM, ROOM_ID, MESSAGE, SEND_DATE
+		FROM (SELECT ROOM_ID, FROM_ID, TO_ID, MESSAGE, SEND_DATE
+				FROM CHATMESSAGES
+				WHERE ROOM_ID = #{room_id}
+				ORDER BY SEND_DATE DESC)
+		WHERE ROWNUM = 1
+	
+	</select>
+</mapper>

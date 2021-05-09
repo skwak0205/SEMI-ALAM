@@ -1,0 +1,265 @@
+@charset "UTF-8";
+
+.container {
+	padding: 100px 40px;
+}
+
+table {
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
+	border-top-width: thick;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	border-spacing: 10px;
+}
+
+th {
+	height: 40px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom-width: medium;
+}
+
+th.no {
+	width: 100px;
+}
+
+th.writer {
+	width: 180px;
+}
+
+th.title {
+	width: 324px;
+}
+
+th.date {
+	width: 324px;
+}
+
+td {
+	height: 70px;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+}
+
+.wrap {
+	clear: both;
+	text-align: center;
+}
+
+.start { /* << */
+	position: relative;
+	top: 50%;
+	width: 28px !important;
+	height: 28px !important;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+.start:after {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid #777;
+	border-left: 1px solid #777;
+	transform: rotate(45deg);
+}
+
+.start:before {
+	position: absolute;
+	top: 10px;
+	left: 16px;
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid #777;
+	border-left: 1px solid #777;
+	transform: rotate(45deg);
+}
+
+.start:hover {
+	background: #fff;
+	border: 1px solid #333;
+}
+
+.prev { /* < */
+	position: relative;
+	top: 50%;
+	width: 28px !important;
+	height: 28px !important;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+.prev:after {
+	position: absolute;
+	top: 10px;
+	left: 13px;
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-bottom: 1px solid #777;
+	border-left: 1px solid #777;
+	transform: rotate(45deg);
+}
+
+.prev:hover {
+	background: #fff;
+	border: 1px solid #333;
+}
+
+.page { /* 현재 페이지 */
+	width: 30px !important;
+	height: 30px !important;
+	font-size: 16px;
+	color: #333;
+	line-height: 33px;
+	padding: 0;
+	background: #fff;
+	border: 0;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	text-align: center;
+	display: inline-block;
+}
+
+.page:hover { /* 원하는 페이지 클릭 이벤트 */
+	border: 3px solid #333;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.next { /* > */
+	position: relative;
+	top: 50%;
+	width: 28px !important;
+	height: 28px !important;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+.next:after {
+	position: absolute;
+	top: 10px;
+	right: 13px;
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-top: 1px solid #777;
+	border-right: 1px solid #777;
+	border-bottom: 1px solid transparent;
+	border-left: 1px solid transparent;
+	transform: rotate(45deg);
+}
+
+.next:hover {
+	background: #fff;
+	border: 1px solid #333;
+}
+
+.end { /* >> */
+	position: relative;
+	top: 50%;
+	width: 28px !important;
+	height: 28px !important;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	text-indent: -9999px;
+	display: inline-block;
+}
+
+.end:before {
+	position: absolute;
+	top: 10px;
+	right: 16px;
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-top: 1px solid #777;
+	border-right: 1px solid #777;
+	border-bottom: 1px solid transparent;
+	border-left: 1px solid transparent;
+	transform: rotate(45deg);
+}
+
+.end:after {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-top: 1px solid #777;
+	border-right: 1px solid #777;
+	border-bottom: 1px solid transparent;
+	border-left: 1px solid transparent;
+	transform: rotate(45deg);
+}
+
+.end:hover {
+	background: #fff;
+	border: 1px solid #333;
+}
+
+#searchChoice {
+	width: 125px;
+	height: 24px;
+}
+
+input[type="text"] {
+	width: 250px;
+	height: 20px;
+}
+
+button[type="submit"] { /* 검색 버튼 */
+	width: 70px;
+	height: 30px;
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}
+
+input[type="button"] { /* 글작성 버튼 */
+	width: 70px;
+	height: 30px;
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+}
+
+td.write {
+	border-bottom: none;
+}

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+.frame {
+	padding: 100px 100px;
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+form {
+	padding: 30px 230px;
+	margin: 30px 76px;
+	background-image: url(https://cdn.pixabay.com/photo/2015/12/15/00/22/border-1093502__340.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.col-25 {
+	margin-top: 6px;
+	float: left;
+}
+
+.col-75 {
+	margin-top: 6px;
+	float: left;
+	width: 75%;
+}
+
+label {
+	padding: 15px 10px 10px 0;
+	width: 100px;
+	display: inline-block;
+}
+
+input[type='text'], select, textarea {
+	padding: 12.2px;
+	width: 100%;
+	resize: vertical;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+input[type='file'] {
+	padding: 12.2px;
+	margin-left: -12px;
+}
+
+input[type='submit'] { /* 제출 */
+	/*padding: 12px 20px;*/
+	width: 70px;
+	height: 35px;
+	color: white;
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+	cursor: pointer;
+	float: right;
+	margin-right: 5px;
+}
+
+input[type='button'] { /* 취소 */
+	/*padding: 12px 20px;*/
+	width: 70px;
+	height: 35px;
+	color: white;
+	background-color: #e2e2e2;
+	background: rgba(102, 51, 0, 0.5);
+	border-radius: 5px;
+	cursor: pointer;
+	float: right;
+}
+
+input[type='submit']:hover {
+	color: #282828;
+	background-color: #2C952C;
+	font-weight: 700;
+}
+
+input[type='button']:hover {
+	color: #282828;
+	background-color: #CD1F48;
+	font-weight: 700;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+	.col-25, .col-75, input[type='submit'] {
+		width: 100%;
+		margin-top: 0;
+	}
+}
