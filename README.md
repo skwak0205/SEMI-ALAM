@@ -1,3 +1,5 @@
+[ALAM]: http://qclass.iptime.org:8585/SEMI-ALAM/
+
 # ALAM (Anywhere Learn Anytime Meet)
 
 #### 주제 
@@ -6,9 +8,7 @@
 
 #### 이유
 
-작품 구상당시 무엇을 만들어야될까 고민하고 있을 때 작년 초 갑자기 코로나가 전세계를 급습해서 엄청난 전염속도를 보여주었습니다.
-그로인해 거리두기 단계가 한층 격상하면서 주위에 있는 많은 서비스들이없어지는 향상을 보였지만 배달과 같은 언택트 서비스들은 이전에 볼수 없는 성장세를 보여주고 현재도 급상승하고 있습니다. 이러한 현상들을 보고 저희도 배달이외에 다른 언택트 서비스들을  중심으로 조사해 보았습니다.
-조사해본 결과 여러 언택트 서비스들중 실제로 사용자가 많이 이용하고 유용할것같은 주제를 토대로 ALAM프로젝트를 계획하게 되었습니다.
+작품 구상당시 무엇을 만들어야될까 고민하고 있을 때 작년 초 갑자기 코로나가 전세계를 급습해서 엄청난 전염속도를 보여주었습니다. 그로인해 거리두기 단계가 한층 격상하면서 주위에 있는 많은 서비스들이없어지는 향상을 보였지만 배달과 같은 언택트 서비스들은 이전에 볼수 없는 성장세를 보여주고 현재도 급상승하고 있습니다. 이러한 현상들을 보고 저희도 배달이외에 다른 언택트 서비스들을  중심으로 조사해 보았습니다. 조사해본 결과 여러 언택트 서비스들중 실제로 사용자가 많이 이용하고 유용할것같은 주제를 토대로 ALAM프로젝트를 계획하게 되었습니다.
 
 #### 개발 환경
 
@@ -47,3 +47,55 @@
 
 - 관리자 서비스
   1. 고객 센터 게시판 관리 및 답변 / 회원 정보 조회 및 제명 / 멘토 신청 수락
+
+
+
+
+
+## 프로젝트 데모
+
+- 메인 페이지
+
+<img src="C:\Users\gsj24\Downloads\qclass.iptime.org_8585_SEMI-ALAM_.png" alt="메인페이지" style="zoom:50%;" />
+
+
+
+- 회원 가입 페이지
+
+<img src="C:\Users\gsj24\AppData\Roaming\Typora\typora-user-images\image-20210522170409914.png" alt="image-20210522170409914" style="zoom:80%;" />
+
+
+
+- 로그인 페이지
+
+<img src="C:\Users\gsj24\AppData\Roaming\Typora\typora-user-images\image-20210522170607619.png" alt="image-20210522170607619" style="zoom:80%;" />
+
+
+
+- 아이디 / 비밀번호 찾기
+
+  <img src="C:\Users\gsj24\AppData\Roaming\Typora\typora-user-images\image-20210522170642242.png" alt="image-20210522170642242" style="zoom:80%;" />
+
+
+
+- 채팅 페이지
+
+  ![image-20210522171310535](C:\Users\gsj24\AppData\Roaming\Typora\typora-user-images\image-20210522171310535.png)![image-20210522171357026](C:\Users\gsj24\AppData\Roaming\Typora\typora-user-images\image-20210522171357026.png)
+
+  
+
+- 화상채팅 페이지
+
+  ![](C:\Users\gsj24\Downloads\localhost_8787_SEMI-ALAM_video.do.png)
+
+
+
+- 일정관리 페이지
+
+  ![image-20210522172129186](C:\Users\gsj24\AppData\Roaming\Typora\typora-user-images\image-20210522172129186.png)
+
+
+
+- 결제 페이지
+
+  ![image-20210522172232869](C:\Users\gsj24\AppData\Roaming\Typora\typora-user-images\image-20210522172232869.png)
