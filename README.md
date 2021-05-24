@@ -23,7 +23,7 @@
 - KAKAO LOGIN API
 - KAKAO MAP API
 - NAVER LOGIN API
-- NAVER SENSE API
+- NAVER SENS API
 - 우편번호/도로명 주소 API
 - Summernote
 - fullCalendar
